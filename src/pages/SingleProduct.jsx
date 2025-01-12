@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-// import HeaderBtn from "../components/singleProduct/HeaderBtn";
+import HeaderBtn from "../components/singleProduct/HeaderBtn";
 import GetData from "../components/singleProduct/GetData";
 import GetImages from "../components/singleProduct/GetImages";
 import useSingleProduct from "../services/api/getSingleProduct";
@@ -19,7 +19,7 @@ const SingleProductById = () => {
 
   return (
     <div className="px-2">
-      {/* <HeaderBtn /> */}
+      <HeaderBtn />
 
       <div className="container mx-auto gap-4 mt-5 grid sm:grid-cols-2 ">
         <div>
