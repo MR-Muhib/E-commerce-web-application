@@ -10,6 +10,7 @@ import LogoutButton from "../components/user/LogoutButton";
 import { auth } from "../firebase";
 import { db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { isValid } from "../utils/inputValidation";
 
 // Using Flowbite for the signup form
 const SignUp = () => {
@@ -23,6 +24,10 @@ const SignUp = () => {
     password: "",
   });
 
+  // input validation
+  const inputValidation = isValid({ user });
+  console.log(inputValidation);
+
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -33,6 +38,13 @@ const SignUp = () => {
     setErrorMessage(""); // Clear previous error messages
 
     try {
+      // Check if the form is valid
+      if (!inputValidation) {
+        setErrorMessage("Please fill out all the required fields.");
+        setLoading(false);
+        return;
+      }
+
       // Create a new user with email and password
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -47,6 +59,7 @@ const SignUp = () => {
       await setDoc(doc(db, "users", userId), {
         name: user.name,
         email: user.email,
+        password: user.password,
         role: "user", // You should NOT save the password here
       });
 
@@ -58,12 +71,14 @@ const SignUp = () => {
       setLoading(false); // Stop loading
       console.error("Error:", error);
     }
+    // reset input fields
+    setUser({ name: "", email: "", password: "" });
   };
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 w-full ">
+    <section className="bg-gray-50  w-full ">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0  dark:border-gray-200">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <SignTitle title="Create a mew account" />
 
@@ -72,40 +87,62 @@ const SignUp = () => {
               action="#"
               onSubmit={submitHandler}
             >
-              <InputSignUp
-                labelName="Your Name"
-                types="name"
-                pl="John Doe"
-                onHandleChange={handleChange}
-                value={user.name}
-              />
+              <div className="">
+                <InputSignUp
+                  labelName="Your Name"
+                  types="name"
+                  pl="John Doe"
+                  onHandleChange={handleChange}
+                  value={user.name}
+                  required={true}
+                />
+                {user.name === "" ? (
+                  <p style={{ color: "red" }}>{errorMessage}</p>
+                ) : (
+                  <p style={{ color: "red" }}></p>
+                )}
+              </div>
 
-              <InputSignUp
-                labelName="Your Email"
-                types="email"
-                pl="name@gmail.com"
-                onHandleChange={handleChange}
-                value={user.email}
-              />
+              <div className="">
+                <InputSignUp
+                  labelName="Your Email"
+                  types="email"
+                  pl="name@gmail.com"
+                  onHandleChange={handleChange}
+                  value={user.email}
+                />
+                {user.email === "" ? (
+                  <p style={{ color: "red" }}>{errorMessage}</p>
+                ) : (
+                  <p style={{ color: "red" }}></p>
+                )}
+              </div>
 
-              <InputSignUp
-                labelName="Password"
-                types="password"
-                pl="••••••••"
-                onHandleChange={handleChange}
-                value={user.password}
-              />
-              <Button text="Sign Up" />
+              <div className="">
+                <InputSignUp
+                  labelName="Password"
+                  types="password"
+                  pl="••••••••"
+                  onHandleChange={handleChange}
+                  value={user.password}
+                />
+                {user.password === "" ? (
+                  <p style={{ color: "red" }}>{errorMessage}</p>
+                ) : (
+                  <p style={{ color: "red" }}></p>
+                )}
+              </div>
+              {isLoading ? (
+                <Button text="Creating Account..." disabled />
+              ) : (
+                <Button text="Sign Up" />
+              )}
 
               <SignNavigate
                 title="Already have an account?"
                 navigate="/sign-in"
                 text="Sign in"
               />
-              <div className="text-center">
-                {isLoading && <p>Creating New User</p>}
-                {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-              </div>
             </form>
 
             <LogoutButton />

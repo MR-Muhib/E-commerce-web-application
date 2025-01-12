@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SignNavigate = ({ title, navigate, text }) => {
   return (
     <>
-      <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+      <p className="text-sm font-light text-gray-500 ">
         {title}
         <Link
           to={navigate}

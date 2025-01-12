@@ -14,10 +14,7 @@ const Remember = () => {
           />
         </div>
         <div className="ml-3 text-sm">
-          <label
-            htmlFor="remember"
-            className="text-gray-500 dark:text-gray-300"
-          >
+          <label htmlFor="remember" className="text-gray-500 ">
             Remember me
           </label>
         </div>

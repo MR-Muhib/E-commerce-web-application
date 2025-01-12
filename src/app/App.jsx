@@ -3,6 +3,7 @@ import { router } from "../router/Router";
 import useProduct from "../services/api/getAllProduct";
 import { SearchProvider } from "../contexts/SearchContext";
 import { AuthProvider } from "../contexts/Auth";
+import { ToastContainer } from "react-toastify";
 // import { store } from "./store";
 // import { Provider } from "react-redux";
 
@@ -17,6 +18,7 @@ const App = () => {
       <AuthProvider>
         <SearchProvider data={products} loading={loading} error={error}>
           <RouterProvider router={router} />
+          <ToastContainer />
         </SearchProvider>
       </AuthProvider>
     </>
