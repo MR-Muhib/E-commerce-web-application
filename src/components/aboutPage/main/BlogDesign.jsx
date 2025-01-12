@@ -4,7 +4,7 @@ import imageTwo from "../../../assets/BlogImages/Rectangle 68 (2).png";
 import imageThree from "../../../assets/BlogImages/Rectangle 68.png";
 
 // Import react icons
-import Blogs from "./helper/getBlog";
+import Blogs from "./helper/GetBlog";
 
 export default function BlogsDesign() {
   return (
