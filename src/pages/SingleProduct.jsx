@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 // import HeaderBtn from "../components/singleProduct/HeaderBtn";
-import GetData from "../components/singleProduct/getData";
+import GetData from "../components/singleProduct/GetData";
 import GetImages from "../components/singleProduct/GetImages";
 import useSingleProduct from "../services/api/getSingleProduct";
 
