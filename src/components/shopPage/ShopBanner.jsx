@@ -1,5 +1,4 @@
 import { RiArrowRightSLine } from "react-icons/ri";
-// import { Link } from "react-router-dom";
 
 // import image path
 import shopBanner from "../../assets/shopbanner.png";

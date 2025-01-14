@@ -7,7 +7,7 @@
       "category": "Electronics",
       "stock": 150,
       "description": "Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
-      "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGO658Pw-RINWl98UsnLGikLz08gbkQYTaQ&s"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGO658Pw-RINWl98UsnLGikLz08gbkQYTaQ&s"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "category": "Accessories",
       "stock": 300,
       "description": "This adjustable smartphone stand provides sturdy support for all devices, making it perfect for video calls, streaming, and reading. Its compact design and portability make it ideal for travel.",
-      "link": "https://png.pngtree.com/png-vector/20240425/ourmid/pngtree-a-phone-stand-propping-up-smartphone-png-image_12312778.png"
+      "image": "https://png.pngtree.com/png-vector/20240425/ourmid/pngtree-a-phone-stand-propping-up-smartphone-png-image_12312778.png"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "category": "Electronics",
       "stock": 80,
       "description": "Enjoy crisp, high-quality audio with this compact Bluetooth speaker. With a battery life of up to 12 hours, it's perfect for outdoor adventures and parties.",
-      "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_n4RfAdHsVdn5aXdkDFkuP9fweEaqi7V02A&s"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_n4RfAdHsVdn5aXdkDFkuP9fweEaqi7V02A&s"
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "category": "Gaming",
       "stock": 200,
       "description": "A high-precision gaming mouse with customizable buttons, RGB lighting, and ergonomic design for long gaming sessions.",
-      "link": "https://static.vecteezy.com/system/resources/previews/048/218/154/non_2x/black-gaming-mouse-with-a-rainbow-light-isolated-from-background-free-png.png"
+      "image": "https://static.vecteezy.com/system/resources/previews/048/218/154/non_2x/black-gaming-mouse-with-a-rainbow-light-isolated-from-background-free-png.png"
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "category": "Electronics",
       "stock": 50,
       "description": "Experience immersive sound and block out unwanted noise with these premium noise-canceling headphones. Ideal for work and travel.",
-      "link": "https://png.pngtree.com/png-vector/20240425/ourmid/pngtree-model-a-pair-of-noise-canceling-headphones-png-image_12312814.png"
+      "image": "https://png.pngtree.com/png-vector/20240425/ourmid/pngtree-model-a-pair-of-noise-canceling-headphones-png-image_12312814.png"
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "category": "Accessories",
       "stock": 120,
       "description": "Ergonomically designed laptop stand that adjusts to multiple angles for improved posture and comfort during work or gaming.",
-      "link": "https://example.com/laptop-stand"
+      "image": "https://example.com/laptop-stand"
     },
     {
       "id": 7,
@@ -61,7 +61,7 @@
       "category": "Wearable",
       "stock": 75,
       "description": "Track your steps, heart rate, and sleep patterns with this stylish and waterproof fitness tracker.",
-      "link": "https://example.com/fitness-tracker"
+      "image": "https://example.com/fitness-tracker"
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "category": "Electronics",
       "stock": 300,
       "description": "Stay powered up on the go with this compact and high-capacity portable charger. Compatible with most smartphones and tablets.",
-      "link": "https://example.com/portable-charger"
+      "image": "https://example.com/portable-charger"
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "category": "Home",
       "stock": 180,
       "description": "This sleek LED desk lamp features adjustable brightness levels and a USB port for charging your devices.",
-      "link": "https://example.com/led-desk-lamp"
+      "image": "https://example.com/led-desk-lamp"
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "category": "Computers",
       "stock": 90,
       "description": "A sleek wireless keyboard with a slim design, responsive keys, and long-lasting battery life. Compatible with Windows, Mac, and tablets.",
-      "link": "https://example.com/wireless-keyboard"
+      "image": "https://example.com/wireless-keyboard"
     }
   ]
 }
