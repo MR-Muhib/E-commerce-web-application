@@ -4,7 +4,6 @@ import { useCartContext } from "../../contexts/CartContext";
 const ProductInfo = () => {
   const { cart } = useCartContext();
   const products = cart;
-  // console.log(products);
 
   return (
     <div className="container mx-auto ">

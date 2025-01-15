@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import SubTotalCart from "../../utils/SubTotalCart";
 
 const CartTotal = () => {
   const subTotal = SubTotalCart();
   const total = parseInt(subTotal);
+  const navigate = useNavigate();
 
   return (
     <div className="w-full h-auto md:w-[420px] md:h-[300px]  bg-common p-5 md:mt-8 md:ml-5">
@@ -14,7 +16,10 @@ const CartTotal = () => {
         <p className="mb-4">
           Total <span className="float-right">{total}</span>
         </p>
-        <button className="w-full mt-20 border border-black py-2 px-4 rounded-xl">
+        <button
+          onClick={() => navigate("/checkout")}
+          className="w-full mt-20 border border-black py-2 px-4 rounded-xl"
+        >
           Check Out
         </button>
       </div>

@@ -11,6 +11,7 @@ import SignIn from "../pages/SignIn";
 import Favorites from "../pages/Favorites";
 import Cart from "../pages/Cart";
 import SignUp from "../pages/SignUp";
+import Checkout from "../pages/Checkout";
 // import PrivateAdminRoute from "../components/protectedRoute/ProvateAdminRoute";
 
 export const router = createBrowserRouter([
@@ -40,6 +41,8 @@ export const router = createBrowserRouter([
 
       // add dynamic elements by id using home page product
       { path: "/single-product/:id", element: <SingleProductById /> },
+
+      { path: "/checkout", element: <Checkout /> },
     ],
   },
 ]);

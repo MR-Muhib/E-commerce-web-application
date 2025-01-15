@@ -11,60 +11,87 @@ export function useCartContext() {
 
 // CartProvider component
 const CartProvider = ({ children }) => {
-  // State to manage cart items
+  const [count, setCount] = useState(1); // State for managing count
+
+  // State to manage cart items, initialized from sessionStorage
   const [cart, setCart] = useState(() => {
     if (typeof window !== "undefined") {
-      const savedCart = localStorage.getItem("cart");
+      const savedCart = sessionStorage.getItem("cart");
       return savedCart ? JSON.parse(savedCart) : [];
     }
     return [];
   });
 
-  // Add or update a product in the cart
-  // const addToCart = useCallback((newProduct) => {
-  //   setCart((prevCart) => {
-  //     const existingProductIndex = prevCart.findIndex(
-  //       (item) => item.id === newProduct.id
-  //     );
-
-  //     let updatedCart;
-  //     if (existingProductIndex !== -1) {
-  //       // If product exists, update its count
-  //       updatedCart = [...prevCart];
-  //       updatedCart[existingProductIndex].count += newProduct.count;
-  //     } else {
-  //       // If product doesn't exist, add it to the cart
-  //       updatedCart = [...prevCart, newProduct];
-  //     }
-
-  //     // Save the updated cart to localStorage
-  //     localStorage.setItem("cart", JSON.stringify(updatedCart));
-  //     return updatedCart;
-  //   });
-  // }, []);
-
   // Delete a product from the cart
   const deleteHandler = useCallback((id) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.filter((item) => item.id !== id);
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      sessionStorage.setItem("cart", JSON.stringify(updatedCart));
       return updatedCart;
     });
   }, []);
 
+  // increment handler
+  const handleIncrement = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, []);
+  // decrement handler
+  const handleDecrement = useCallback(() => {
+    setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
+  }, []);
+
+  // Handle changes to the count input
+  const handleCountChange = useCallback((event) => {
+    const value = parseInt(event.target.value, 10); // Specify the radix for safety
+    if (!isNaN(value) && value >= 1 && value <= 100) {
+      setCount(value);
+    } else {
+      console.error(
+        "Invalid count input. Please enter a number between 1 and 100."
+      );
+    }
+  }, []);
+
+  // Add a product to the cart
+  const handleAddToCart = useCallback(
+    (currentProduct) => {
+      const existingCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+      const productIndex = existingCart.findIndex(
+        (cartItem) => cartItem.id === currentProduct.id
+      );
+      const newProduct = { ...currentProduct, count };
+
+      if (productIndex !== -1) {
+        existingCart[productIndex].count += newProduct.count;
+      } else {
+        existingCart.push(newProduct);
+      }
+
+      // Synchronize with sessionStorage
+      sessionStorage.setItem("cart", JSON.stringify(existingCart));
+      return existingCart;
+    },
+    [count] // Dependency on count
+  );
+
   // Context value
   const value = {
     cart,
-    // addToCart,
+    count,
     deleteHandler,
+    handleAddToCart,
+    handleCountChange,
+    handleIncrement,
+    handleDecrement,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
 export { CartProvider };
+export default CartProvider;
 
 // prop-types
 CartProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };

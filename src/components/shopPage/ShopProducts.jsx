@@ -20,7 +20,7 @@ const ShopProducts = () => {
 
           {/* Add to Cart Button (Hidden by Default) */}
           <div className="absolute w-full flex h-full top-0 left-0 opacity-0 group-hover:opacity-90 transition ease-in-out duration-300">
-            <AddCardBtn />
+            <AddCardBtn productId={product.id} />
           </div>
         </div>
       ))}

@@ -24,12 +24,12 @@ const compareProducts = [
 ];
 
 // component to add product to cart and other actions  like share, compare, and like
-const AddCardBtn = () => {
+const AddCardBtn = ({ productId }) => {
   return (
     <div className="flex items-center justify-center w-full bg-[#646463] ">
       <div className="text-center ">
         {/* Add card button */}
-        <Button />
+        <Button productId={productId} />
 
         {/* compare icons */}
         <div className="flex flex-col sm:flex-row flex-wrap gap-2 text-sm mt-4 justify-center">
@@ -45,6 +45,14 @@ const AddCardBtn = () => {
     </div>
   );
 };
+
+// prop-types
+
+AddCardBtn.propTypes = {
+  productId: PropTypes.string,
+};
+
+// export default AddCardBtn;
 
 export default AddCardBtn;
 
