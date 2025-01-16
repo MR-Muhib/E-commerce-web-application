@@ -6,10 +6,10 @@ const ProductInfo = () => {
   const products = cart;
 
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto">
       <table className="table-auto w-full  my-8 border-collapse ">
         <thead>
-          <tr className="bg-common py-4 font-serif">
+          <tr className="bg-common py-4 px-2 font-serif">
             <th className="">Product Name</th>
             <th className="">Price</th>
             <th className="">Quantity</th>

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const ProductCard = ({ product }) => {
-  const { name, description, rate } = product;
+  const { name, description, price } = product;
 
   return (
     <div>
@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
         <p className="text-gray-500">
           {description.slice(0, 30) || "No description available."}
         </p>
-        <p className="text-black font-semibold mt-2">Price: ${rate}</p>
+        <p className="text-black font-semibold mt-2">Price: ${price}</p>
       </div>
     </div>
   );

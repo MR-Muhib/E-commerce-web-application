@@ -4,6 +4,9 @@ import { MdCompareArrows } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import Button from "./Button";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import likeProduct from "../../../utils/likeProduct";
+import useProduct from "../../../services/api/getAllProduct";
 
 const compareProducts = [
   {
@@ -25,6 +28,28 @@ const compareProducts = [
 
 // component to add product to cart and other actions  like share, compare, and like
 const AddCardBtn = ({ productId }) => {
+  const [color, setColor] = useState("");
+  const { products } = useProduct();
+
+  const heartHandleClick = (id) => {
+    setColor((prevColor) => (prevColor === "red" ? "white" : "red"));
+
+    try {
+      likeProduct(products, id); // Call the updated utility function
+    } catch (error) {
+      console.error("Error liking the product:", error);
+    }
+  };
+
+  // re-factoring this handler
+  const shareHandleClick = (id) => {
+    alert("Share card", id);
+  };
+
+  const compareHandleClick = (id) => {
+    alert("Compare card", id);
+  };
+
   return (
     <div className="flex items-center justify-center w-full bg-[#646463] ">
       <div className="text-center ">
@@ -38,6 +63,16 @@ const AddCardBtn = ({ productId }) => {
               key={compare.id}
               icons={compare.icons}
               compareName={compare.compareName}
+              onClick={
+                compare.compareName === "Like"
+                  ? () => heartHandleClick(productId)
+                  : compare.compareName === "Share"
+                  ? () => shareHandleClick(productId)
+                  : compare.compareName === "Compare"
+                  ? () => compareHandleClick(productId)
+                  : null
+              }
+              color={compare.compareName === "Like" ? color : "white"} // Dynamic color
             />
           ))}
         </div>
@@ -47,21 +82,22 @@ const AddCardBtn = ({ productId }) => {
 };
 
 // prop-types
-
 AddCardBtn.propTypes = {
   productId: PropTypes.string,
 };
 
-// export default AddCardBtn;
-
 export default AddCardBtn;
 
 // usage in ProductCard component
-const ProductComponent = ({ icons, compareName }) => {
+const ProductComponent = ({ icons, compareName, onClick, color }) => {
   return (
     <div className="flex items-center gap-1 text-white font-semibold">
-      <span>{icons}</span>
-      <p className="text-white">{compareName}</p>
+      <span className="text-xl" style={{ color: color }}>
+        {icons}
+      </span>
+      <p onClick={onClick} className="text-white text-md cursor-pointer">
+        {compareName}
+      </p>
     </div>
   );
 };
@@ -70,4 +106,6 @@ const ProductComponent = ({ icons, compareName }) => {
 ProductComponent.propTypes = {
   icons: PropTypes.node.isRequired,
   compareName: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  color: PropTypes.string,
 };

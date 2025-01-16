@@ -4,7 +4,7 @@ import { useAuth } from "../../contexts/Auth";
 
 const NavLinks = () => {
   const { userLoggedIn } = useAuth();
-  console.log(userLoggedIn);
+  // console.log(userLoggedIn);
 
   return (
     <nav className="p-6 sm:p-3  md:bg-transparent">

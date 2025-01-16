@@ -5,15 +5,13 @@ import CartTotal from "../components/cart/CartTotal";
 import ProductInfo from "../components/cart/ProductInfo";
 
 const Cart = () => {
-  // get data from local storage
-
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white ">
       <CartBanner />
 
       <hr></hr>
 
-      <div className="md:container md:mx-auto md:flex mb-5">
+      <div className=" md:container md:mx-auto md:flex mb-5 ">
         <ProductInfo />
         <CartTotal />
       </div>

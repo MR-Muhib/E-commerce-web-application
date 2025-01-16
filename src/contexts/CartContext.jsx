@@ -67,6 +67,7 @@ const CartProvider = ({ children }) => {
         existingCart.push(newProduct);
       }
 
+      setCart(existingCart);
       // Synchronize with sessionStorage
       sessionStorage.setItem("cart", JSON.stringify(existingCart));
       return existingCart;
@@ -77,6 +78,7 @@ const CartProvider = ({ children }) => {
   // Context value
   const value = {
     cart,
+    setCart,
     count,
     deleteHandler,
     handleAddToCart,
