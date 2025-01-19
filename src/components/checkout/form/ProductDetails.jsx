@@ -1,8 +1,12 @@
+import { useCheckoutContext } from "../../../contexts/CheckoutContext";
 import SubTotalCart from "../../../utils/SubTotalCart";
 
 const ProductDetails = () => {
   const subTotal = SubTotalCart();
   const total = parseInt(subTotal);
+
+  const { handleSubmit, PaymentElement } = useCheckoutContext();
+ 
 
   return (
     <div className="bg-white w-full my-6">
@@ -29,7 +33,30 @@ const ProductDetails = () => {
         </div>
 
         <hr />
-        <div className="">
+
+        <div className="my-5">
+          <PaymentElement />
+        </div>
+
+        <div className=" items-center justify-center flex ">
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className="py-2 px-10 rounded-md border border-gray-300"
+          >
+            Place order
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductDetails;
+
+// design parts from cart
+{
+  /*   <div className="">
           <ul className="flex gap-2 my-5">
             <input type="radio" />
             <li className="">Direct Bank Transfer</li>
@@ -55,15 +82,5 @@ const ProductDetails = () => {
           Your personal data will be used to support your experience throughout
           this website, to manage access to your account, and for other purposes
           described in our <a className="font-semibold">privacy policy</a>.
-        </p>
-        <div className=" items-center justify-center flex ">
-          <button className="py-2 px-10 rounded-md border border-gray-300">
-            Place order
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default ProductDetails;
+        </p> */
+}

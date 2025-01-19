@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 import { createContext, useState, useCallback, useContext } from "react";
+import { toast } from "react-toastify";
+
+import { useAuth } from "../contexts/Auth";
 
 // Create the CartContext
 const CartContext = createContext();
@@ -12,6 +15,7 @@ export function useCartContext() {
 // CartProvider component
 const CartProvider = ({ children }) => {
   const [count, setCount] = useState(1); // State for managing count
+  const { userLoggedIn } = useAuth();
 
   // State to manage cart items, initialized from sessionStorage
   const [cart, setCart] = useState(() => {
@@ -55,6 +59,11 @@ const CartProvider = ({ children }) => {
   // Add a product to the cart
   const handleAddToCart = useCallback(
     (currentProduct) => {
+      if (!userLoggedIn) {
+        toast.error("Please log in to add products to your cart.");
+        return;
+      }
+
       const existingCart = JSON.parse(sessionStorage.getItem("cart")) || [];
       const productIndex = existingCart.findIndex(
         (cartItem) => cartItem.id === currentProduct.id
@@ -70,8 +79,10 @@ const CartProvider = ({ children }) => {
       setCart(existingCart);
       // Synchronize with sessionStorage
       sessionStorage.setItem("cart", JSON.stringify(existingCart));
+      toast.success("Product added to cart!");
       return existingCart;
     },
+
     [count] // Dependency on count
   );
 

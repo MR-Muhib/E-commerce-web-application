@@ -29,10 +29,33 @@ const SignIn = () => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
+  // existing email validation
+  const existingEmail = async (email) => {
+    try {
+      const user = await auth.fetchSignInMethodsForEmail(email);
+      if (user.length > 0) {
+        setErrorMessage("Email already exists.");
+        setIsLoading(false);
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    return false;
+  };
+
   const submitHandler = async (event) => {
     event.preventDefault();
     setIsLoading(true);
+
     try {
+      // existing email validation
+      if (!existingEmail) {
+        setErrorMessage("Email does not exist.");
+        setIsLoading(false);
+        return;
+      }
+
       // Check if the form is valid
       if (!inputValidation) {
         setErrorMessage("Please fill out all the required fields.");
@@ -40,14 +63,7 @@ const SignIn = () => {
         return;
       }
 
-      const res = await signInWithEmailAndPassword(
-        auth,
-        user.email,
-        user.password
-      );
-      if (res.user) {
-        console.log("User logged in successfully", res.user);
-      }
+      await signInWithEmailAndPassword(auth, user.email, user.password);
 
       setIsLoading(false);
       setErrorMessage("");
@@ -81,11 +97,7 @@ const SignIn = () => {
                   onHandleChange={handleChange}
                   value={user.email}
                 />
-                {user.email === "" ? (
-                  <p style={{ color: "red" }}>{errorMessage}</p>
-                ) : (
-                  <p style={{ color: "red" }}></p>
-                )}
+                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               </div>
 
               <div className="">
@@ -96,11 +108,7 @@ const SignIn = () => {
                   onHandleChange={handleChange}
                   value={user.password}
                 />
-                {user.password === "" ? (
-                  <p style={{ color: "red" }}>{errorMessage}</p>
-                ) : (
-                  <p style={{ color: "red" }}></p>
-                )}
+                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               </div>
 
               <Remember />
