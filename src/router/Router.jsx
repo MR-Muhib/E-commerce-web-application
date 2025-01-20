@@ -12,6 +12,8 @@ import Favorites from "../pages/Favorites";
 import Cart from "../pages/Cart";
 import SignUp from "../pages/SignUp";
 import Checkout from "../pages/Checkout";
+import AddProductForm from "../pages/ProductAddForm";
+import PrivateAdminRoute from "../protectedAuth/PrivateAdminRoute";
 // import PrivateAdminRoute from "../components/protectedRoute/ProvateAdminRoute";
 
 export const router = createBrowserRouter([
@@ -35,6 +37,17 @@ export const router = createBrowserRouter([
       {
         path: "/favorites",
         element: <Favorites />,
+      },
+
+      // private routes for admin
+
+      {
+        path: "/add-product",
+        element: (
+          <PrivateAdminRoute>
+            <AddProductForm />
+          </PrivateAdminRoute>
+        ),
       },
 
       { path: "/cart", element: <Cart /> },

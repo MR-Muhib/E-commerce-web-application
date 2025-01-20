@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import PrivateAdminRoute from "../../protectedAuth/PrivateAdminRoute";
 
 const NavLinks = () => {
   return (
@@ -12,6 +13,10 @@ const NavLinks = () => {
         <Lists path="/about" title="About" />
 
         <Lists path="/contact" title="Contact" />
+
+        <PrivateAdminRoute>
+          <Lists path="/add-product" title="Add Product" />
+        </PrivateAdminRoute>
       </ul>
     </nav>
   );

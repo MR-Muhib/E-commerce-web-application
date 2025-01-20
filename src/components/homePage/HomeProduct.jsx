@@ -13,7 +13,7 @@ export default function HomeProducts() {
         Our Products
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5 px-4">
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductView key={product.id} product={product} />
         ))}
       </div>

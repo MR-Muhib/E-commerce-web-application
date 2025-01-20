@@ -8,7 +8,7 @@ const useProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:5000/products?_limit=5");
+        const response = await fetch("http://localhost:5000/products");
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }

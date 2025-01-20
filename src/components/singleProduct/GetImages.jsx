@@ -1,23 +1,23 @@
-import image from "../../assets/BlogImages/Rectangle 68 (1).png";
+import PropTypes from "prop-types";
 
-const GetImages = () => {
+const GetImages = ({ product }) => {
   return (
     <div className="">
       <div className="container  flex justify-between  mx-auto">
         {/* Left side related product image */}
         <div className="pr-5">
-          <GetImagesFun />
-          <GetImagesFun />
-          <GetImagesFun />
-          <GetImagesFun />
-          <GetImagesFun />
+          <GetImagesFun image={product.image} />
+          <GetImagesFun image={product.image} />
+          <GetImagesFun image={product.image} />
+          <GetImagesFun image={product.image} />
+          <GetImagesFun image={product.image} />
         </div>
 
         {/* product image */}
         <div className="">
           <img
-            src={image}
-            alt="image"
+            src={product.image}
+            alt={product.title}
             className="w-full h-auto mt-5 object-cover"
           />
         </div>
@@ -28,7 +28,7 @@ const GetImages = () => {
 
 export default GetImages;
 
-const GetImagesFun = () => {
+const GetImagesFun = ({ image }) => {
   return (
     <img
       src={image}
@@ -38,4 +38,17 @@ const GetImagesFun = () => {
       className="w-20 h-auto mt-5 block"
     />
   );
+};
+
+// prop-types
+
+GetImages.propTypes = {
+  product: PropTypes.shape({
+    title: PropTypes.string,
+    image: PropTypes.string.isRequired,
+  }),
+};
+
+GetImagesFun.propTypes = {
+  image: PropTypes.string.isRequired,
 };

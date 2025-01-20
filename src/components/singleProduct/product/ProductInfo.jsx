@@ -13,7 +13,7 @@ const ProductInfo = ({ product }) => {
       <p className="text-2xl text-yellow-500">* * * *</p>
 
       <p className="text-justify pb-4">
-        {toggle ? product.description : product.description.slice(0, 100)}
+        {toggle ? product.description : product.description?.slice(0, 100)}
       </p>
       <button
         onClick={() => setToggle(!toggle)}
