@@ -7,7 +7,7 @@ import ShopProducts from "../components/shopPage/ShopProducts";
 const Shop = () => {
   return (
     <>
-      <div className="container mx-auto justify-center">
+      <div className="">
         <ShopBanner />
 
         <ShopProducts />

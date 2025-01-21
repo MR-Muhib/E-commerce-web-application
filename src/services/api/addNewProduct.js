@@ -3,10 +3,9 @@ const addNewProduct = async (product) => {
     const response = await fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ product }),
+      body: JSON.stringify(product),
     });
 
     if (!response.ok) {

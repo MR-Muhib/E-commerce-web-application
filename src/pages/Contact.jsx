@@ -7,11 +7,11 @@ import ContactLocation from "../components/contactPage/ContactLocation";
 const Contact = () => {
   return (
     <>
-      <div className="container  mx-auto">
+      <div className="">
         <ContactBanner />
         <ContactHeader />
 
-        <div className="sm:flex justify-around mb-5 p-5">
+        <div className="container mx-auto sm:flex justify-around mb-5 p-5">
           <ContactLocation />
           <ContactForm />
         </div>

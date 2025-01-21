@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const ProductCard = ({ product }) => {
-  const { name, description, price, image } = product;
+  const { name, title, price, image } = product;
 
   return (
     <div>
@@ -10,14 +10,12 @@ const ProductCard = ({ product }) => {
         alt={name || "Product image"}
         width={200}
         height={150}
-        className="object-cover w-full h-40 p-5"
+        className="object-cover w-full h-40 "
       />
 
       <div className="p-4">
         <h2 className="text-lg font-bold">{name || "Unnamed Product"}</h2>
-        <p className="text-gray-500">
-          {description?.slice(0, 30) || "No description available."}
-        </p>
+        <p className="text-gray-500">{title}</p>
         <p className="text-black font-semibold mt-2">Price: ${price}</p>
       </div>
     </div>

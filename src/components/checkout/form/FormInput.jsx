@@ -30,6 +30,7 @@ FormInput.propTypes = {
   handleChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired, // Ensure value is passed
   fildErrors: PropTypes.object, // Ensure fieldErrors are passed for error handling,
+  error: PropTypes.string, // Ensure error is passed for error handling,
 };
 
 export default FormInput;

@@ -14,7 +14,7 @@ const BlogBanner = () => {
     <BannerImage
       banner={blogBanner}
       logo={logo}
-      prev={`home`}
+      prev={`Home`}
       icons={<RiArrowRightSLine />}
       view={`Blog`}
       title={`Blog`}

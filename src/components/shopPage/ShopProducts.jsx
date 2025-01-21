@@ -9,7 +9,7 @@ const ShopProducts = () => {
   if (error) return <div>Error loading data.</div>;
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 ">
+    <div className="container px-4 mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 ">
       {products.map((product) => (
         <div
           key={product.id}

@@ -6,14 +6,16 @@ import BannerImage from "../../helper/BannerImages";
 
 const ShopBanner = () => {
   return (
-    <BannerImage
-      banner={shopBanner}
-      logo={null}
-      prev={`Home`}
-      icons={<RiArrowRightSLine />}
-      view={`Shop`}
-      title={`Shop`}
-    />
+    <div className="">
+      <BannerImage
+        banner={shopBanner}
+        logo={null}
+        prev={`Home`}
+        icons={<RiArrowRightSLine />}
+        view={`Shop`}
+        title={`Shop`}
+      />
+    </div>
   );
 };
 

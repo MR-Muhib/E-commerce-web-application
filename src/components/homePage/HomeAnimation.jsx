@@ -60,7 +60,7 @@ const carouselArr = [
 
 const HomeAnimation = () => {
   return (
-    <Carousel responsive={responsive} className="mx-auto  w-full">
+    <Carousel responsive={responsive} className="container mx-auto  w-full">
       {carouselArr.map((item) => (
         <div key={item.id} className="p-4 ">
           <img className="" src={item.src} alt={item.title} />

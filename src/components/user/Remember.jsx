@@ -2,9 +2,9 @@ import SignNavigate from "./SignNavigate";
 
 const Remember = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="sm:flex items-center justify-between">
       <div className="flex items-start">
-        <div className="flex items-center h-5">
+        <div className="flex items-center h-5 mb-2">
           <input
             id="remember"
             aria-describedby="remember"
@@ -13,7 +13,7 @@ const Remember = () => {
             required=""
           />
         </div>
-        <div className="ml-3 text-sm">
+        <div className="ml-3  text-sm">
           <label htmlFor="remember" className="text-gray-500 ">
             Remember me
           </label>

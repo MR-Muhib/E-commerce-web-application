@@ -4,7 +4,7 @@ import HomeProducts from "../components/homePage/HomeProduct";
 
 const Home = () => {
   return (
-    <div className="container  mx-auto">
+    <div className="">
       <HomeBanner />
 
       <HomeAnimation />

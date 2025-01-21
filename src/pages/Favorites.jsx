@@ -20,9 +20,12 @@ const Favorites = () => {
 
   return (
     <div className="w-full ">
+      <h1 className="text-2xl font-bold text-center mt-5 text-[#b88e2f]">
+        Favorite Products
+      </h1>
       <div className="container mx-auto p-5 my-5">
         {findProduct ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-5 gap-5 px-4">
+          <div className="grid my-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
             {likeProducts.map((product) => (
               <FavoriteProduct
                 key={product.id}

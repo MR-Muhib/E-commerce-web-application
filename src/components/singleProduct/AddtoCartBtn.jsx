@@ -3,15 +3,11 @@ import Button from "./product/Button";
 import { useParams } from "react-router-dom";
 import useProduct from "../../services/api/getAllProduct";
 import { useCartContext } from "../../contexts/CartContext";
-import { useAuth } from "../../contexts/Auth";
-import { toast } from "react-toastify";
 
 const AddToCartButton = () => {
   // const [count, setCount] = useState(1);
   const { id } = useParams();
   const { products } = useProduct();
-  const { userLoggedIn } = useAuth();
-  console.log(userLoggedIn);
 
   // Find the product by id
   const currentProduct = products.find((p) => p.id === id);

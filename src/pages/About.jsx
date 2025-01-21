@@ -8,10 +8,10 @@ import PageExchangeButtons from "../components/applicationInfo/PageExchangeButto
 const About = () => {
   return (
     <>
-      <div className="container mx-auto justify-center">
+      <div className="">
         <BlogBanner />
 
-        <div className="sm:flex gap-5 mx-auto">
+        <div className="container sm:flex gap-5 mx-auto">
           <BlogsDesign />
           <BlogsPost />
         </div>

@@ -26,7 +26,7 @@ const SignUp = () => {
 
   // input validation
   const inputValidation = isValid({ user });
-  console.log(inputValidation);
+  // console.log(inputValidation);
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });

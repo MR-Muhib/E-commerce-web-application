@@ -1,62 +1,23 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Wireless Headphones",
-      "price": 59.99,
-      "category": "Electronics",
-      "stock": 150,
-      "description": "Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGO658Pw-RINWl98UsnLGikLz08gbkQYTaQ&s"
+      "id": "1737455682644",
+      "name": "Syltherine",
+      "title": "Stylish cafe chair",
+      "price": 2500,
+      "stock": "17",
+      "category": "trtrtret",
+      "image": "https://res.cloudinary.com/dcdga3gke/image/upload/v1737455703/vihfjptyshywy4hbeoyr.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
     },
     {
-      "id": "2",
-      "name": "Smartphone Stand",
-      "price": 12.99,
-      "category": "Accessories",
-      "stock": 300,
-      "description": "This adjustable smartphone stand provides sturdy support for all devices, making it perfect for video calls, streaming, and reading. Its compact design and portability make it ideal for travel.",
-      "image": "https://png.pngtree.com/png-vector/20240425/ourmid/pngtree-a-phone-stand-propping-up-smartphone-png-image_12312778.png"
-    },
-    {
-      "id": "3",
-      "name": "Bluetooth Speaker",
-      "price": 45,
-      "category": "Electronics",
-      "stock": 80,
-      "description": "Enjoy crisp, high-quality audio with this compact Bluetooth speaker. With a battery life of up to 12 hours, it's perfect for outdoor adventures and parties.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_n4RfAdHsVdn5aXdkDFkuP9fweEaqi7V02A&s"
-    },
-    {
-      "id": "4",
-      "name": "Gaming Mouse",
-      "price": 29.99,
-      "category": "Gaming",
-      "stock": 200,
-      "description": "A high-precision gaming mouse with customizable buttons, RGB lighting, and ergonomic design for long gaming sessions.",
-      "image": "https://static.vecteezy.com/system/resources/previews/048/218/154/non_2x/black-gaming-mouse-with-a-rainbow-light-isolated-from-background-free-png.png"
-    },
-    {
-      "id": "5",
-      "name": "Noise-Canceling Headphones",
-      "price": 120.99,
-      "category": "Electronics",
-      "stock": 50,
-      "description": "Experience immersive sound and block out unwanted noise with these premium noise-canceling headphones. Ideal for work and travel.",
-      "image": "https://png.pngtree.com/png-vector/20240425/ourmid/pngtree-model-a-pair-of-noise-canceling-headphones-png-image_12312814.png"
-    },
-
-    {
-      "id": "6288",
-      "product": {
-        "id": "1737392807760",
-        "name": "hello",
-        "price": 4566,
-        "stock": "4545",
-        "category": "trtrtret",
-        "image": "https://res.cloudinary.com/dcdga3gke/image/upload/v1737392823/ccvdbp11a9jmtodfonc0.png",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
-      }
+      "id": "1737458495329",
+      "name": "Luxury big sofa",
+      "price": 7000.5,
+      "stock": "50",
+      "category": "Luxury big sofa",
+      "image": "https://res.cloudinary.com/dcdga3gke/image/upload/v1737458634/htw0rvzuccovymzxocdx.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
     }
   ]
 }

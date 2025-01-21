@@ -7,6 +7,7 @@ const AddProductForm = () => {
   const initialData = {
     id: new Date().getTime().toString(),
     name: "",
+    title: "",
     price: "",
     stock: "",
     category: "",
@@ -58,7 +59,7 @@ const AddProductForm = () => {
   };
 
   return (
-    <div className="w-full p-5">
+    <div className="w-full p-5 my-5">
       <form
         className="container mx-auto border border-gray-300 p-5 shadow-md rounded-md"
         onSubmit={handleSubmit}
@@ -69,6 +70,15 @@ const AddProductForm = () => {
         <p>Product Name:</p>
         <input
           value={product.name}
+          className="border border-gray-300 w-full my-2 "
+          onChange={handleChange}
+          name="name"
+          required
+        />
+        <br />
+        <p>Product Title:</p>
+        <input
+          value={product.title}
           className="border border-gray-300 w-full my-2 "
           onChange={handleChange}
           name="name"

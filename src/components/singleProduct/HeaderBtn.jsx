@@ -9,12 +9,12 @@ const HeaderBtn = () => {
       <div className="container mx-auto flex w-full h-20 gap-6 items-center px-5">
         <div className=" flex text-gray-500 border-r-2 border-black pr-4">
           <div className={style}>
-            <Link href="/">Home</Link>
+            <Link to="/">Home</Link>
             <MdOutlineKeyboardArrowRight className="text-2xl text-black" />
           </div>
 
           <div className={style}>
-            <Link href="/shop">Shop</Link>
+            <Link to="/shop">Shop</Link>
             <MdOutlineKeyboardArrowRight className="text-2xl text-black" />
           </div>
         </div>

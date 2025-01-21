@@ -6,7 +6,7 @@ import BannerImage from "../../helper/BannerImages";
 
 const CheckoutBanner = () => {
   return (
-    <div className="container mx-auto">
+    <div className="">
       <BannerImage
         banner={shopBanner}
         logo={null}

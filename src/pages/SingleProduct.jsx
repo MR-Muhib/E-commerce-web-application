@@ -6,8 +6,10 @@ import useSingleProduct from "../services/api/getSingleProduct";
 
 const SingleProductById = () => {
   const { id } = useParams();
+  // console.log(id);
 
   const { product, loading, error } = useSingleProduct({ id });
+  // console.log(product);
 
   if (loading) {
     return <div>Loading...</div>;
