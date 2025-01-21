@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 // Import react icons
 import { LuAlignJustify } from "react-icons/lu";
 import NavLinks from "../NavLinks";
+
 import { useAuth } from "../../../contexts/Auth";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
@@ -54,7 +55,7 @@ const NavToggle = () => {
   return (
     <div ref={toggleRef}>
       <div
-        className="text-xl mr-5 cursor-pointer float-right pt-4 "
+        className="text-xl mr-5 cursor-pointer float-right pt-4  ease-in-out	  "
         onClick={(e) => {
           e.stopPropagation();
           setToggle(!toggle);
@@ -65,8 +66,9 @@ const NavToggle = () => {
 
       {/* Conditionally render NavLinks and NavIcons based on toggle state */}
       {toggle && (
-        <div className="absolute top-12 right-0 w-[70%] bg-slate-50 shadow-lg z-10">
-          <NavLinks />
+        <div className="absolute top-12 right-0 w-[70%] bg-slate-50 shadow-lg z-10 ">
+          <NavLinks toggle={toggle} />
+
           <div className="flex justify-end">
             <button
               onClick={loggedInHandler}
